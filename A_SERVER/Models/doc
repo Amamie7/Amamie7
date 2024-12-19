@@ -1,0 +1,28 @@
+Parameters Explanation
+{ _id: 'userId' }
+
+This is the query to find the counter document with a specific _id of 'userId'.
+{ $inc: { sequence_value: 1 } }
+
+This is the update operation:
+
+    $inc: This is a MongoDB update operator that increments the value of a field by a specified amount. In this case, it increments the sequence_value field by 1.
+    sequence_value: 1: This means that the sequence_value field in the counter document will be incremented by 1 each time this update operation is executed.
+
+{ new: true, upsert: true }
+
+These are options for the findByIdAndUpdate method:
+
+    new: true: This option specifies that the method should return the updated document rather than the original document. When set to true, the returned document reflects the changes made by the update operation.
+
+    upsert: true: This is a combination of "update" and "insert". When upsert is set to true, if no document matches the query ({ _id: 'userId' } in this case), a new document will be created using the update criteria. Essentially, it ensures that if the counter document does not exist, it will be created with the specified _id and sequence_value initialized.
+
+Summary
+
+    { _id: 'userId' }: The query to find the counter document by its _id.
+    { $inc: { sequence_value: 1 } }: The update operation to increment the sequence_value field by 1.
+    { new: true, upsert: true }:
+        new: true: Return the updated document after the update is applied.
+        upsert: true: Create a new document if no document matches the query, initializing the new document with the provided update fields.
+
+This combination ensures that each time a new User document is created, the Counter document is either updated or created (if it doesn't exist), ensuring that the _id for the User is always unique and sequential.

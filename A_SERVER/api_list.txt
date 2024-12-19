@@ -1,0 +1,63 @@
+API_base_url = http://127.0.0.1:7000/api
+
+default response
+http://127.0.0.1:7000
+
+###
+### USERS
+###
+# methods: post, get
+http://127.0.0.1:7000/api/v1/user/users
+
+# get one user
+http://127.0.0.1:7000/api/v1/user/:userId
+
+http://127.0.0.1:7000/api/v1/user/3
+
+
+###
+### USER LOGIN
+###
+# methods: post
+http://127.0.0.1:7000/api/v1/user/users/login
+
+
+
+###
+### LIKES
+###
+# methods: post, get
+http://127.0.0.1:7000/api/v1/likes/:postId
+
+http://127.0.0.1:7000/api/v1/likes/2
+
+http://example.com/api/v1/likes/2
+
+
+
+###
+### POST
+###
+# methods: post, get
+http://127.0.0.1:7000/api/v1/post/:postId
+
+http://127.0.0.1:7000/api/v1/post/2
+
+http://127.0.0.1:7000/api/v1/post/
+
+http://127.0.0.1:7000/api/v1/post/populate
+
+
+###
+### COMMENTS
+###
+# methods: post, get
+http://127.0.0.1:7000/api/v1/comment
+
+
+# Get a post comments
+http://127.0.0.1:7000/api/v1/comment/:postId
+
+http://127.0.0.1:7000/api/v1/comment/2
+
+
